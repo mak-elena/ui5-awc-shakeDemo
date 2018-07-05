@@ -1,0 +1,87 @@
+<mvc:View
+	controllerName="ui5.awc.demo.controller.UiDensity"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:l="sap.ui.layout"
+	xmlns:awc="ui5.awc">
+
+	<semantic:SemanticPage
+		id="mySemanticPage"
+		headerPinnable="true"
+		headerExpanded="true"
+		toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false"
+		showFooter="true">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n>uiDensityExampleName}" />
+		</semantic:titleHeading>
+
+		<semantic:titleSnappedContent>
+			<Text text="{i18n>sampleShortDescription}"/>
+		</semantic:titleSnappedContent>
+
+		<semantic:headerContent>
+			<SegmentedButton
+				id="theme"
+				selectedKey="{context>/vibration}">
+				<items>
+					<SegmentedButtonItem text="0" key="0" />
+					<SegmentedButtonItem text="1" key="1" />
+					<SegmentedButtonItem text="2" key="2" />
+				</items>
+			</SegmentedButton>
+		</semantic:headerContent>
+
+		<!-- Content -->
+		<semantic:content>
+			<VBox>
+				<List id="productsList" items="{/}">
+					<items>
+						<CustomListItem>
+							<awc:ProductItem
+								name="{name}"
+								price="{price}"
+								currency="{currency}"
+								quantity="{quantity}" />
+							<!--<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom awc-productItem" >
+								<Text text="{name}" class="ui5-awc-productItem__name"/>
+								<ObjectNumber
+									number="{price}"
+									numberUnit="{currency}" class="ui5-awc-productItem__price"/>
+								<Button icon="sap-icon://less" press="onDecreaseQuantity" class="awc-productItem__button"/>
+								<Input id="itemQuantity" type="Number" value="{quantity}" width="40px" class="awc-productItem__quantity"/>
+								<Button icon="sap-icon://add" press="onIncreaseQuantity" class="awc-productItem__button"/>
+							</HBox>-->
+						</CustomListItem>
+					</items>
+				</List>
+				<!--<awc:AdaptiveButton text="Order My Pizza" class="ui5-awc-panel__order-button" />
+				<Text text="{i18n>motionDetectedText} {context>/vibration}"/>
+				<Text text="{i18n>accelerationText} {i18n>XText} {context>/accelerationX}; {i18n>YText} {context>/accelerationY}; {i18n>ZText} {context>/accelerationZ};"/>-->
+			</VBox>
+		</semantic:content>
+
+		<!-- Actions -->
+		<semantic:closeAction>
+			<semantic:CloseAction press="onCloseExamplePress" />
+		</semantic:closeAction>
+
+		<semantic:fullScreenAction >
+			<semantic:FullScreenAction
+				visible="{=!${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"
+				press="onFullScreenPress" />
+		</semantic:fullScreenAction>
+		<semantic:footerCustomActions>
+			<awc:AdaptiveButton text="Order My Pizza" class="ui5-awc-panel__order-button" />
+		</semantic:footerCustomActions>
+
+		<semantic:exitFullScreenAction >
+			<semantic:ExitFullScreenAction
+				press="onExitFullScreenPress"
+				visible="{=${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"/>
+		</semantic:exitFullScreenAction>
+	</semantic:SemanticPage>
+</mvc:View>

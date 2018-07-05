@@ -1,0 +1,15 @@
+{
+	"name": "OSCON 2018",
+	"description": "Demo App",
+	"private": true,
+	"dependencies": {
+		"openui5-sap.ui.core": "openui5/packaged-sap.ui.core#latest",
+		"openui5-sap.m": "openui5/packaged-sap.m#latest",
+		"openui5-sap.ui.layout": "openui5/packaged-sap.ui.layout#latest",
+		"openui5-themelib_sap_belize": "openui5/packaged-themelib_sap_belize#latest"
+	},
+	"devDependencies": {
+		"webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.14",
+		"shadycss": "webcomponents/shadycss#^1.0.0"
+	}
+}

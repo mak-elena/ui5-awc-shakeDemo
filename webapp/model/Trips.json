@@ -1,0 +1,14 @@
+[
+	{
+		"title": "conference 1",
+		"icon": "flight",
+		"startDate": "07/15/2018",
+		"endDay": 5
+	},
+	{
+		"icon": "passenger-train",
+		"title": "conference 2",
+		"startDate": "07/20/2018",
+		"endDay": 17
+	}
+]

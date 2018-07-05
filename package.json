@@ -1,0 +1,41 @@
+{
+  "name": "UI5AWCDemo",
+  "version": "1.0.0",
+  "description": "OpenUI5 & AWC Shake Demo",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install",
+    "postinstall": "bower install && node postInstall.js",
+    "start": "grunt serve"
+  },
+  "dependencies": {
+    "@openui5/sap.m": "^1.52.5",
+    "@openui5/sap.ui.core": "^1.52.5",
+    "@openui5/sap.ui.layout": "^1.52.5",
+    "@openui5/themelib_sap_belize": "^1.52.5",
+    "@webcomponents/shadycss": "^1.0.6",
+    "@webcomponents/webcomponentsjs": "^1.0.14",
+    "lite-server": "^2.3.0"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "eslint-plugin-openui5": "0.1.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-eslint": "^17.3.1",
+    "grunt-openui5": "^0.5.0",
+    "grunt-shell": "^1.1.2",
+    "grunt-zip": "^0.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mak-elena/ui5-awc-shakeDemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

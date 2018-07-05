@@ -1,0 +1,16 @@
+.sapMInput.ui5-awc_adaptiveInput {
+	height: 100%;
+	width: auto;
+}
+
+/*
+.sapMInput.ui5-awc_adaptiveInput > .sapMInputDivWrapper {
+	height: 100%;
+}
+*/
+
+.sapMInput.ui5-awc_adaptiveInput .sapMInputBaseInner {
+	width: 2.5rem;
+	text-align: right;
+}
+

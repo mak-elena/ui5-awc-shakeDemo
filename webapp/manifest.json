@@ -1,0 +1,119 @@
+{
+	"_version": "1.9.0",
+
+	"sap.app": {
+		"id": "ui5.awc.demo",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+
+		"applicationVersion": {
+		"version": "1.0.0"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ui5.awc.demo.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+
+		"dependencies": {
+			"minUI5Version": "1.42.0",
+			"libs": {
+				"sap.ui.core": {
+				},
+				"sap.m": {
+				},
+				"sap.f": {
+				}
+			}
+		},
+
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ui5.awc.demo.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				},
+				{
+					"uri": "css/adaptiveButton.css"
+				},
+				{
+					"uri": "css/adaptiveInput.css"
+				},
+				{
+					"uri": "css/variantButton.css"
+				}
+			],
+			"js": [
+				{
+					"uri": "thirdparty/awc-core.js"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.f.routing.Router",
+				"viewType": "XML",
+				"viewPath": "ui5.awc.demo.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"uiDensity"
+					]
+				},
+				"async": true
+			},
+
+			"routes": [
+				{
+					"pattern": "",
+					"name": "uiDensity",
+					"target": "uiDensity"
+				}
+			],
+
+			"targets": {
+				"uiDensity": {
+					"viewName": "UiDensity",
+					"viewId": "uiDensity",
+					"viewLevel": 1
+				}
+			}
+		}
+	}
+}

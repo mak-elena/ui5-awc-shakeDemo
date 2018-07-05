@@ -1,0 +1,32 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:awc="ui5.awc">
+<!--	<l:FixFlex class="fixFlexHorizontal" vertical="false" fixFirst="false" minFlexSize="50%">
+		<l:fixContent>
+			<HBox>
+			<ObjectNumber
+				number="{$this>price}"
+				numberUnit="{$this>currency}" class="ui5-awc-productItem__price"/>
+			<awc:AdaptiveButton icon="sap-icon://less" press="onDecreaseQuantity" class="awc-productItem__button"/>
+			<awc:AdaptiveInput id="itemQuantity" type="Number" value="{$this>quantity}" class="awc-productItem__quantity"/>
+			<awc:AdaptiveButton icon="sap-icon://add" press="onIncreaseQuantity" class="awc-productItem__button"/>
+		</HBox>
+		</l:fixContent>
+		<l:flexContent>
+			<Text text="{$this>name}" class="ui5-awc-productItem__name"/>
+		</l:flexContent>
+	</l:FixFlex>-->
+	<HBox
+		class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom ui5-awc-productItem"
+		fitContainer="true">
+		<Text text="{$this>name}" class="ui5-awc-productItem__name"/>
+		<ObjectNumber
+			number="{$this>price}"
+			numberUnit="{$this>currency}" class="ui5-awc-productItem__price"/>
+		<awc:AdaptiveButton icon="sap-icon://less" press="onDecreaseQuantity" class="awc-productItem__button"/>
+		<awc:AdaptiveInput id="itemQuantity" type="Number" value="{$this>quantity}" class="awc-productItem__quantity"/>
+		<awc:AdaptiveButton icon="sap-icon://add" press="onIncreaseQuantity" class="awc-productItem__button"/>
+	</HBox>
+</core:FragmentDefinition>
