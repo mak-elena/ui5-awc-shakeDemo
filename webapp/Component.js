@@ -122,9 +122,9 @@ sap.ui.define([
 				this._contextModel.setProperty("/accelerationY", this._sensor.y);
 				this._contextModel.setProperty("/accelerationZ", this._sensor.z);
 				var iVibrationLevel = 0;
-				if (Math.abs(sensor.x) > 2) {
+				if (Math.abs(this._sensor.x) > 2) {
 					iVibrationLevel = 2;
-				} else if (Math.abs(sensor.x) > 1) {
+				} else if (Math.abs(this._sensor.x) > 1) {
 					iVibrationLevel = 1;
 				}
 
