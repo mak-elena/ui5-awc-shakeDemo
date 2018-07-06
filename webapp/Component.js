@@ -132,7 +132,7 @@ sap.ui.define([
 				if (this._contextModel.getProperty("/vibration") > iVibrationLevel & !this._timeout) {
 					if (this._timeout == null) {
 						this._timeout = setTimeout(
-							this._updateVibrationLevel().bind(this, iVibrationLevel),
+							this._updateVibrationLevel.bind(this, iVibrationLevel),
 							2000)
 					}
 				}
