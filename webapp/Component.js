@@ -136,10 +136,7 @@ sap.ui.define([
 					}
 				}
 				else {
-
 					if (this._contextModel.getProperty("/vibration") < iVibrationLevel) {
-						/*this._contextModel.setProperty("/vibration", iVibrationLevel);
-						this.updateContextProfile();*/
 						this._updateVibrationLevel(iVibrationLevel);
 					}
 				}
@@ -151,7 +148,7 @@ sap.ui.define([
 					this._timeout = null;
 				}
 
-				this._contextModel.setProperty("/vibration", iVibrationLevel);
+				this._contextModel.setProperty("/vibration", "" + iVibrationLevel);
 				this.updateContextProfile();
 
 			}
