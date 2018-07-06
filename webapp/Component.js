@@ -118,9 +118,9 @@ sap.ui.define([
 			},
 
 			onSensorReading: function () {
-				this._contextModel.setProperty("/accelerationX", sensor.x);
-				this._contextModel.setProperty("/accelerationY", sensor.y);
-				this._contextModel.setProperty("/accelerationZ", sensor.z);
+				this._contextModel.setProperty("/accelerationX", this._sensor.x);
+				this._contextModel.setProperty("/accelerationY", this._sensor.y);
+				this._contextModel.setProperty("/accelerationZ", this._sensor.z);
 				var iVibrationLevel = 0;
 				if (Math.abs(sensor.x) > 2) {
 					iVibrationLevel = 2;
