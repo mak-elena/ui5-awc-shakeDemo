@@ -84,8 +84,7 @@ sap.ui.define([
 
 			_initContextModel: function () {
 				var oContextModel = new ContextModel({
-						"display-mode": "mixed",
-						"vibration": "1"
+						"vibration": "0"
 					}
 				);
 				oContextModel.setDefaultBindingMode("TwoWay");
