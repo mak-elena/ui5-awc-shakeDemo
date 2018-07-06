@@ -136,23 +136,24 @@ sap.ui.define([
 					}
 				}
 				else {
-					if (this._timeout != null) {
-						clearTimeout(this._timeout);
-						this._timeout = null;
-					}
 
 					if (this._contextModel.getProperty("/vibration") < iVibrationLevel) {
-						this._contextModel.setProperty("/vibration", iVibrationLevel);
-						this.updateContextProfile();
+						/*this._contextModel.setProperty("/vibration", iVibrationLevel);
+						this.updateContextProfile();*/
+						this._updateVibrationLevel(iVibrationLevel);
 					}
 				}
 			},
 
 			_updateVibrationLevel: function (iVibrationLevel) {
-				alert("_updateVibrationLevel " + iVibrationLevel)
+				if (this._timeout != null) {
+					clearTimeout(this._timeout);
+					this._timeout = null;
+				}
+
 				this._contextModel.setProperty("/vibration", iVibrationLevel);
 				this.updateContextProfile();
-				this._timeout = null;
+
 			}
 
 		});
