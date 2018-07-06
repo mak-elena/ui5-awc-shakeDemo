@@ -116,17 +116,18 @@ sap.ui.define([
 				let oModel = this.getModel("context");
 				oModel.setProperty("/vibration", 2);
 
-				sensor.addEventListener('reading', function(){
+				sensor.addEventListener('reading', function () {
 					oModel.setProperty("/accelerationX", sensor.x);
 					oModel.setProperty("/accelerationY", sensor.y);
 					oModel.setProperty("/accelerationZ", sensor.z);
 					var iVibrationLevel = 0;
-					if(Math.abs(sensor.x) > 1) {
-						iVibrationLevel = 1;
-					} else if (Math.abs(sensor.x) > 2) {
+					if (Math.abs(sensor.x) > 2) {
 						iVibrationLevel = 2;
+					} else if (Math.abs(sensor.x) > 1) {
+						iVibrationLevel = 1;
 					}
-					if(oModel.getProperty("/vibration") > iVibrationLevel & !this._timeout) {
+
+					if (oModel.getProperty("/vibration") > iVibrationLevel & !this._timeout) {
 						this._timeout = setTimeout(
 							this._updateVibrationLevel().bind(this),
 							2000,
@@ -147,7 +148,7 @@ sap.ui.define([
 				}.bind(this));
 			},
 
-			_updateVibrationLevel: function ( oModel, iVibrationLevel) {
+			_updateVibrationLevel: function (oModel, iVibrationLevel) {
 				alert("_updateVibrationLevel " + iVibrationLevel)
 				oModel.setProperty("/vibration", iVibrationLevel);
 				this.updateContextProfile();
