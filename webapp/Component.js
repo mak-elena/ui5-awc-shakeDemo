@@ -90,8 +90,9 @@ sap.ui.define([
 				);
 				oContextModel.setDefaultBindingMode("TwoWay");
 				this.setModel(oContextModel, "context");
+				this._contextModel = this.getModel("context");
 
-				this.getModel("context").attachPropertyChange(function () {
+				this._contextModel.attachPropertyChange(function () {
 					this.updateContextProfile();
 				}.bind(this));
 			},
@@ -109,49 +110,51 @@ sap.ui.define([
 			},
 
 			_initSensors: function () {
-				let sensor = new Accelerometer({frequency: 500});
-				sensor.start();
-				sensor.active = true;
+				this._sensor = new Accelerometer({frequency: 60});
+				this._sensor.start();
+				this._sensor.active = true;
 
-				let oModel = this.getModel("context");
-				oModel.setProperty("/vibration", 2);
+				this._sensor.addEventListener('reading', this.onSensorReading.bind(this))
+			},
 
-				sensor.addEventListener('reading', function () {
-					oModel.setProperty("/accelerationX", sensor.x);
-					oModel.setProperty("/accelerationY", sensor.y);
-					oModel.setProperty("/accelerationZ", sensor.z);
-					var iVibrationLevel = 0;
-					if (Math.abs(sensor.x) > 2) {
-						iVibrationLevel = 2;
-					} else if (Math.abs(sensor.x) > 1) {
-						iVibrationLevel = 1;
-					}
+			onSensorReading: function () {
+				this._contextModel.setProperty("/accelerationX", sensor.x);
+				this._contextModel.setProperty("/accelerationY", sensor.y);
+				this._contextModel.setProperty("/accelerationZ", sensor.z);
+				var iVibrationLevel = 0;
+				if (Math.abs(sensor.x) > 2) {
+					iVibrationLevel = 2;
+				} else if (Math.abs(sensor.x) > 1) {
+					iVibrationLevel = 1;
+				}
 
-					if (oModel.getProperty("/vibration") > iVibrationLevel & !this._timeout) {
+				// Postpone update vibration level in case it is less then current
+				if (this._contextModel.getProperty("/vibration") > iVibrationLevel & !this._timeout) {
+					if (this._timeout != null) {
 						this._timeout = setTimeout(
 							this._updateVibrationLevel().bind(this),
 							2000,
-							oModel,
 							iVibrationLevel)
 					}
-					else {
+				}
+				else {
+					if (this._timeout != null) {
 						clearTimeout(this._timeout);
 						this._timeout = null;
-
-						if (oModel.getProperty("/vibration") < iVibrationLevel) {
-							oModel.setProperty("/vibration", iVibrationLevel);
-							this.updateContextProfile();
-						}
 					}
 
-
-				}.bind(this));
+					if (this._contextModel.getProperty("/vibration") < iVibrationLevel) {
+						this._contextModel.setProperty("/vibration", iVibrationLevel);
+						this.updateContextProfile();
+					}
+				}
 			},
 
-			_updateVibrationLevel: function (oModel, iVibrationLevel) {
+			_updateVibrationLevel: function (iVibrationLevel) {
 				alert("_updateVibrationLevel " + iVibrationLevel)
-				oModel.setProperty("/vibration", iVibrationLevel);
+				this._contextModel.setProperty("/vibration", iVibrationLevel);
 				this.updateContextProfile();
+				this._timeout = null;
 			}
 
 		});
