@@ -24,9 +24,10 @@
 		</semantic:titleSnappedContent>
 
 		<semantic:headerContent>
+			<Title text="Vibration Level:" />
 			<SegmentedButton
 				id="theme"
-				selectedKey="{context>/vibration}">
+				selectedKey="{context>/vibration}" width="100%">
 				<items>
 					<SegmentedButtonItem text="0" key="0" />
 					<SegmentedButtonItem text="1" key="1" />
