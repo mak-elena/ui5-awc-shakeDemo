@@ -66,23 +66,8 @@
 		</semantic:content>
 
 		<!-- Actions -->
-		<semantic:closeAction>
-			<semantic:CloseAction press="onCloseExamplePress" />
-		</semantic:closeAction>
-
-		<semantic:fullScreenAction >
-			<semantic:FullScreenAction
-				visible="{=!${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"
-				press="onFullScreenPress" />
-		</semantic:fullScreenAction>
 		<semantic:footerCustomActions>
 			<awc:AdaptiveButton text="Order My Pizza" class="ui5-awc-panel__order-button" />
 		</semantic:footerCustomActions>
-
-		<semantic:exitFullScreenAction >
-			<semantic:ExitFullScreenAction
-				press="onExitFullScreenPress"
-				visible="{=${appView>/actionButtonsInfo/midColumn/fullScreenMode}}"/>
-		</semantic:exitFullScreenAction>
 	</semantic:SemanticPage>
 </mvc:View>
