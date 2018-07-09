@@ -136,12 +136,12 @@ sap.ui.define([
 			_calculateVibrationLevel: function () {
 				var iVibrationLevel = 0;
 				if ((Math.abs(this._sensor.x) > 2)
-				|| (Math.abs(this._sensor.y) > 2)
-				|| (Math.abs(this._sensor.z) > 2)) {
+				/*|| (Math.abs(this._sensor.y) > 2)
+				|| (Math.abs(this._sensor.z) > 2)*/) {
 					iVibrationLevel = 2;
 				} else if ((Math.abs(this._sensor.x) > 1)
-					|| (Math.abs(this._sensor.y) > 1)
-					|| (Math.abs(this._sensor.z) > 1)) {
+					/*|| (Math.abs(this._sensor.y) > 1)
+					|| (Math.abs(this._sensor.z) > 1)*/) {
 					iVibrationLevel = 1;
 				}
 
