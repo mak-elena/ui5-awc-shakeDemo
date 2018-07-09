@@ -24,7 +24,7 @@
 		</semantic:titleSnappedContent>
 
 		<semantic:headerContent>
-			<Title text="Vibration Level:" />
+			<Title text="{i18n>vibrationLevelText}" />
 			<SegmentedButton
 				id="theme"
 				selectedKey="{context>/vibration}" width="100%">
@@ -47,21 +47,9 @@
 								price="{price}"
 								currency="{currency}"
 								quantity="{quantity}" />
-							<!--<HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom awc-productItem" >
-								<Text text="{name}" class="ui5-awc-productItem__name"/>
-								<ObjectNumber
-									number="{price}"
-									numberUnit="{currency}" class="ui5-awc-productItem__price"/>
-								<Button icon="sap-icon://less" press="onDecreaseQuantity" class="awc-productItem__button"/>
-								<Input id="itemQuantity" type="Number" value="{quantity}" width="40px" class="awc-productItem__quantity"/>
-								<Button icon="sap-icon://add" press="onIncreaseQuantity" class="awc-productItem__button"/>
-							</HBox>-->
 						</CustomListItem>
 					</items>
 				</List>
-				<!--<awc:AdaptiveButton text="Order My Pizza" class="ui5-awc-panel__order-button" />
-				<Text text="{i18n>motionDetectedText} {context>/vibration}"/>
-				<Text text="{i18n>accelerationText} {i18n>XText} {context>/accelerationX}; {i18n>YText} {context>/accelerationY}; {i18n>ZText} {context>/accelerationZ};"/>-->
 			</VBox>
 		</semantic:content>
 

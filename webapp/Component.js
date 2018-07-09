@@ -31,7 +31,6 @@ sap.ui.define([
 
 				this._initContextModel();
 				this._initProductsModel();
-				this._initTripsModel();
 				this.updateContextProfile();
 
 				this._initSensors();
@@ -60,17 +59,20 @@ sap.ui.define([
 			 * This method can be called to determine whether the sapUiSizeCompact or sapUiSizeCozy
 			 * design mode class should be set, which influences the size appearance of some controls.
 			 * @public
-			 * @return {string} css class, either 'sapUiSizeCompact' or 'sapUiSizeCozy' - or an empty string if no css class should be set
+			 * @return {string} css class, either 'sapUiSizeCompact' or 'sapUiSizeCozy'
+			 *          - or an empty string if no css class should be set
 			 */
 			getContentDensityClass: function () {
 				if (this._sContentDensityClass === undefined) {
 					// check whether FLP has already set the content density class; do nothing in this case
-					if (jQuery(document.body).hasClass("sapUiSizeCozy") || jQuery(document.body).hasClass("sapUiSizeCompact")) {
+					if (jQuery(document.body).hasClass("sapUiSizeCozy")
+						|| jQuery(document.body).hasClass("sapUiSizeCompact")) {
 						this._sContentDensityClass = "";
 					} else if (Device.system.desktop) { // apply "compact" mode for desktop devices
 						this._sContentDensityClass = "sapUiSizeCompact";
 					} else {
-						// "cozy" in case of phones, tablets devices(touch support); default for most sap.m controls, but needed for desktop-first controls like sap.ui.table.Table
+						// "cozy" in case of phones, tablets devices(touch support);
+						// default for most sap.m controls, but needed for desktop-first controls like sap.ui.table.Table
 						this._sContentDensityClass = "sapUiSizeCozy";
 					}
 				}
@@ -98,14 +100,8 @@ sap.ui.define([
 
 			_initProductsModel: function () {
 				var oProductsModel = new JSONModel(jQuery.sap.getModulePath("ui5/awc/demo", "/model/Products.json"));
-				//this.setModel(oProductsModel, "products");
+				// set as a defult model
 				this.setModel(oProductsModel);
-			},
-
-			_initTripsModel: function () {
-				var oTripsModel = new JSONModel(jQuery.sap.getModulePath("ui5/awc/demo", "/model/Trips.json"));
-				//this.setModel(oProductsModel, "products");
-				this.setModel(oTripsModel, "trips");
 			},
 
 			_initSensors: function () {
@@ -117,22 +113,17 @@ sap.ui.define([
 			},
 
 			onSensorReading: function () {
-				this._contextModel.setProperty("/accelerationX", this._sensor.x);
+				/*this._contextModel.setProperty("/accelerationX", this._sensor.x);
 				this._contextModel.setProperty("/accelerationY", this._sensor.y);
-				this._contextModel.setProperty("/accelerationZ", this._sensor.z);
-				var iVibrationLevel = 0;
-				if (Math.abs(this._sensor.x) > 2) {
-					iVibrationLevel = 2;
-				} else if (Math.abs(this._sensor.x) > 1) {
-					iVibrationLevel = 1;
-				}
+				this._contextModel.setProperty("/accelerationZ", this._sensor.z);*/
+				var iVibrationLevel = this._calculateVibrationLevel();
 
 				// Postpone update vibration level in case it is less then current
 				if (this._contextModel.getProperty("/vibration") > iVibrationLevel) {
 					if (this._timeout == null) {
 						this._timeout = setTimeout(
 							this._updateVibrationLevel.bind(this, iVibrationLevel),
-							2000)
+							5000)
 					}
 				}
 				else {
@@ -140,6 +131,21 @@ sap.ui.define([
 						this._updateVibrationLevel(iVibrationLevel);
 					}
 				}
+			},
+
+			_calculateVibrationLevel: function () {
+				var iVibrationLevel = 0;
+				if ((Math.abs(this._sensor.x) > 2)
+				|| (Math.abs(this._sensor.y) > 2)
+				|| (Math.abs(this._sensor.z) > 2)) {
+					iVibrationLevel = 2;
+				} else if ((Math.abs(this._sensor.x) > 1)
+					|| (Math.abs(this._sensor.y) > 1)
+					|| (Math.abs(this._sensor.z) > 1)) {
+					iVibrationLevel = 1;
+				}
+
+				return iVibrationLevel;
 			},
 
 			_updateVibrationLevel: function (iVibrationLevel) {

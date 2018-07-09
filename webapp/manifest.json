@@ -73,9 +73,6 @@
 				},
 				{
 					"uri": "css/adaptiveInput.css"
-				},
-				{
-					"uri": "css/variantButton.css"
 				}
 			],
 			"js": [

@@ -23,15 +23,30 @@ sap.ui.define([
 			},
 
 			onIncreaseQuantity: function(oEvent) {
-				var oEventSource = oEvent;
-				var iValue = this.getQuantity() + 1;
-				this.setQuantity(iValue);
+				// get button element
+				var oEventSource = oEvent.getSource();
+
+				// get product item
+				// todo: refactor
+				var oItem = oEventSource.getParent().getParent();
+				if(oItem && oItem.getQuantity) {
+					var iValue = oItem.getQuantity() + 1;
+					oItem.setQuantity(iValue);
+				}
 			},
 
 			onDecreaseQuantity: function (oEvent) {
-				var oEventSource = oEvent;
-				var iValue = this.getQuantity() ? this.getQuantity() - 1 : 0;
-				this.setQuantity(iValue);
+				// get button element
+				var oEventSource = oEvent.getSource();
+
+				// get product item
+				// todo: refactor
+				var oItem = oEventSource.getParent().getParent();
+				if(oItem && oItem.getQuantity) {
+					var iValue = oItem.getQuantity() ? oItem.getQuantity() - 1 : 0;
+					oItem.setQuantity(iValue);
+				}
+
 			},
 		});
 	});

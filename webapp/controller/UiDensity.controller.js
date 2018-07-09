@@ -20,33 +20,6 @@ sap.ui.define([
 			},
 
 			/* =========================================================== */
-			/* event handlers                                              */
-			/* =========================================================== */
-
-			onIncreaseNumber: function(oEvent) {
-				var oEventSource = oEvent
-			},
-
-			onDecreaseNumber: function (oEvent) {
-
-			},
-
-			onFullScreenPress: function () {
-				this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreenMode", true);
-				this.getModel("appView").setProperty("/layout", "MidColumnFullScreen");
-			},
-
-			onExitFullScreenPress: function () {
-				this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
-				this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreenMode", false);
-			},
-
-			onCloseExamplePress: function () {
-				this.getModel("appView").setProperty("/actionButtonsInfo/midColumn/fullScreenMode", false);
-				this.getRouter().navTo("master");
-			},
-
-			/* =========================================================== */
 			/* begin: internal methods                                     */
 			/* =========================================================== */
 
@@ -57,7 +30,6 @@ sap.ui.define([
 			 * @private
 			 */
 			_onObjectMatched : function (oEvent) {
-				this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
 			}
 
 		});
