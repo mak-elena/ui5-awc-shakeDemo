@@ -25,8 +25,20 @@
 		<ObjectNumber
 			number="{$this>price}"
 			numberUnit="{$this>currency}" class="ui5-awc-productItem__price"/>
-		<awc:AdaptiveButton icon="sap-icon://less" press="onDecreaseQuantity" class="awc-productItem__button"/>
-		<awc:AdaptiveInput id="itemQuantity" type="Number" value="{$this>quantity}" class="awc-productItem__quantity"/>
-		<awc:AdaptiveButton icon="sap-icon://add" press="onIncreaseQuantity" class="awc-productItem__button"/>
+		<awc:AdaptiveButton
+			icon="sap-icon://less"
+			press="onDecreaseQuantity"
+			class="awc-productItem__button"
+			type="Emphasized"/>
+		<awc:AdaptiveInput
+			id="itemQuantity"
+			type="Number"
+			value="{$this>quantity}"
+			class="awc-productItem__quantity"/>
+		<awc:AdaptiveButton
+			icon="sap-icon://add"
+			press="onIncreaseQuantity"
+			class="awc-productItem__button"
+			type="Emphasized"/>
 	</HBox>
 </core:FragmentDefinition>
