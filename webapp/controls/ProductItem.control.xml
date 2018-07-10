@@ -23,8 +23,8 @@
 		fitContainer="true">
 		<Text text="{$this>name}" class="ui5-awc-productItem__name"/>
 		<ObjectNumber
-			number="{$this>price}"
-			numberUnit="{$this>currency}" class="ui5-awc-productItem__price"/>
+			number="{$this>price},-"
+			class="ui5-awc-productItem__price"/>
 		<awc:AdaptiveButton
 			icon="sap-icon://less"
 			press="onDecreaseQuantity"
