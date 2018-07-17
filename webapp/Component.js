@@ -113,9 +113,6 @@ sap.ui.define([
 			},
 
 			onSensorReading: function () {
-				/*this._contextModel.setProperty("/accelerationX", this._sensor.x);
-				this._contextModel.setProperty("/accelerationY", this._sensor.y);
-				this._contextModel.setProperty("/accelerationZ", this._sensor.z);*/
 				var iVibrationLevel = this._calculateVibrationLevel();
 
 				// Postpone update vibration level in case it is less then current
@@ -123,7 +120,7 @@ sap.ui.define([
 					if (this._timeout == null) {
 						this._timeout = setTimeout(
 							this._updateVibrationLevel.bind(this, iVibrationLevel),
-							5000)
+							10000)
 					}
 				}
 				else {
@@ -135,13 +132,9 @@ sap.ui.define([
 
 			_calculateVibrationLevel: function () {
 				var iVibrationLevel = 0;
-				if ((Math.abs(this._sensor.x) > 2)
-				/*|| (Math.abs(this._sensor.y) > 2)
-				|| (Math.abs(this._sensor.z) > 2)*/) {
+				if ((Math.abs(this._sensor.x) > 2)) {
 					iVibrationLevel = 2;
-				} else if ((Math.abs(this._sensor.x) > 1)
-					/*|| (Math.abs(this._sensor.y) > 1)
-					|| (Math.abs(this._sensor.z) > 1)*/) {
+				} else if ((Math.abs(this._sensor.x) > 1)) {
 					iVibrationLevel = 1;
 				}
 
@@ -156,10 +149,7 @@ sap.ui.define([
 
 				this._contextModel.setProperty("/vibration", "" + iVibrationLevel);
 				this.updateContextProfile();
-
 			}
-
 		});
-
 	}
 );

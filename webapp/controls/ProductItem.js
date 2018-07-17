@@ -22,6 +22,7 @@ sap.ui.define([
 				}
 			},
 
+			/* ---------------- Event handlers ----------------- */
 			onIncreaseQuantity: function(oEvent) {
 				// get button element
 				var oEventSource = oEvent.getSource();

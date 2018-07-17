@@ -9,15 +9,7 @@ sap.ui.define([
 
 			onInit : function () {
 				var oViewModel = new JSONModel({
-					delay : 0,
-					layout : "OneColumn",
-					previousLayout : "",
-					actionButtonsInfo : {
-						midColumn : {
-							enterFullScreen : !Device.system.phone,
-							fullScreenMode : false
-						}
-					}
+					delay : 0
 				});
 				this.setModel(oViewModel, "appView");
 

@@ -1,6 +1,6 @@
 {
 	"name": "OSCON 2018",
-	"description": "Demo App",
+	"description": "UI5 & AWC Demo App",
 	"private": true,
 	"dependencies": {
 		"openui5-sap.ui.core": "openui5/packaged-sap.ui.core#latest",

@@ -3,7 +3,6 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic"
-	xmlns:l="sap.ui.layout"
 	xmlns:awc="ui5.awc">
 
 	<semantic:SemanticPage

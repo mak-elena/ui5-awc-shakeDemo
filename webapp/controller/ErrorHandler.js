@@ -16,7 +16,6 @@ sap.ui.define([
 			constructor : function (oComponent) {
 				this._oResourceBundle = oComponent.getModel("i18n").getResourceBundle();
 				this._oComponent = oComponent;
-				this._oModel = oComponent.getModel();
 				this._bMessageOpen = false;
 				this._sErrorText = this._oResourceBundle.getText("errorText");
 			},
