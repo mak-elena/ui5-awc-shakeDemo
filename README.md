@@ -9,8 +9,6 @@ Demonstrates how [context queries](https://github.com/FraunhoferIAO/awc-core/blo
 
 **Showcase**: Vibration (movement) of a device makes UI elements increase size.
 
-**[Launch Demo](https://mak-elena.github.io/ui5-awc-shakeDemo/)**
-
 ### Phone
 
 **To test in Chrome follow the
@@ -20,6 +18,8 @@ Demonstrates how [context queries](https://github.com/FraunhoferIAO/awc-core/blo
 ### Laptop
 Since no sensor API is available the **Vibration Level** might be
 simulated using the buttons in the top of the app.
+
+**[Launch Demo](https://mak-elena.github.io/ui5-awc-shakeDemo/)**
 
 ## @DEV
 
