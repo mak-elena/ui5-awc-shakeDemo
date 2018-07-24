@@ -7,15 +7,14 @@
 
 Demonstrates how [context queries](https://github.com/FraunhoferIAO/awc-core/blob/master/doc/API.md#contextquery) might be used to adapt UI to environmment conditions. [Generic Sensor API](https://www.w3.org/TR/generic-sensor/) is used to gather data (Accelerator) and adjust size of UI elements.
 
-     #### Phone
+#### Phone
 
-     To test in **Chrome** follow the
-     **[Launch Instructions for Generic Sensor API](https://intel.github.io/generic-sensor-demos/)** or use buttons in the top to   simulsate **Vibration Level** change.
+To test in **Chrome** follow the
+**[Launch Instructions for Generic Sensor API](https://intel.github.io/generic-sensor-demos/)** or use buttons in the top to   simulsate **Vibration Level** change.
 
-
-     #### Laptop
-     Since no sensor API is available the **Vibration Level** might be
-     simulated using the buttons in the top of the app.
+#### Laptop
+Since no sensor API is available the **Vibration Level** might be
+simulated using the buttons in the top of the app.
 
 ### **[Launch Demo](https://mak-elena.github.io/ui5-awc-shakeDemo/)**
 
