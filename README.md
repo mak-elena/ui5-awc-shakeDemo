@@ -3,24 +3,30 @@
 
 ## Adaptive User Interface Demo
 
+Demonstrates how [context queries](https://github.com/FraunhoferIAO/awc-core/blob/master/doc/API.md#contextquery) might be used to adapt UI to environmment conditions.
+
+ [Generic Sensor API](https://www.w3.org/TR/generic-sensor/) is used to gather data (Accelerator) and adjust size of UI elements.
+
+**Showcase**: Vibration (movement) of a device makes UI elements increase size.
+
 **[Launch Demo](https://mak-elena.github.io/ui5-awc-shakeDemo/)**
+
+### Phone
+
+**To test in Chrome follow the
+[Launch Instructions for Generic Sensor API](https://intel.github.io/generic-sensor-demos/)** or use buttons in the top to simulsate **Vibration Level** change.
+
+
+### Laptop
+Since no sensor API is available the **Vibration Level** might be
+simulated using the buttons in the top of the app.
+
+## @DEV
 
 Built with
 * [openUI5](https://openui5.hana.ondemand.com/) framework (GitHub: https://github.com/SAP/openui5)
 * [Adaptive Web Components](https://github.com/FraunhoferIAO/awc-core) Framework
 * [Generic Sensor API](https://www.w3.org/TR/generic-sensor/)
-
-### Phone
-Sensor data (Accelerator) are used to change size of UI elements.
-
-**To test in Chrome follow the
-[Launch Instructions](https://intel.github.io/generic-sensor-demos/)**
-
-
-### Laptop
-Since no sensor API is available the vibraton might be
-simulated using the buttons in the top of the app.
-
 
 ### How to install
 
