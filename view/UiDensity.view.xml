@@ -1,0 +1,60 @@
+<mvc:View
+	controllerName="ui5.awc.demo.controller.UiDensity"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:awc="ui5.awc">
+
+	<semantic:SemanticPage
+		id="mySemanticPage"
+		headerPinnable="true"
+		headerExpanded="true"
+		toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false"
+		showFooter="true">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n>uiDensityExampleName}" />
+		</semantic:titleHeading>
+
+		<semantic:titleSnappedContent>
+			<Text text="{i18n>sampleShortDescription}"/>
+		</semantic:titleSnappedContent>
+
+		<semantic:headerContent>
+			<Title text="{i18n>vibrationLevelText}" />
+			<SegmentedButton
+				id="theme"
+				selectedKey="{context>/vibration}" width="100%">
+				<items>
+					<SegmentedButtonItem text="0" key="0" />
+					<SegmentedButtonItem text="1" key="1" />
+					<SegmentedButtonItem text="2" key="2" />
+				</items>
+			</SegmentedButton>
+		</semantic:headerContent>
+
+		<!-- Content -->
+		<semantic:content>
+			<VBox>
+				<List id="productsList" items="{/}">
+					<items>
+						<CustomListItem>
+							<awc:ProductItem
+								name="{name}"
+								price="{price}"
+								currency="{currency}"
+								quantity="{quantity}" />
+						</CustomListItem>
+					</items>
+				</List>
+			</VBox>
+		</semantic:content>
+
+		<!-- Actions -->
+		<semantic:footerCustomActions>
+			<awc:AdaptiveButton text="Order My Pizza" class="ui5-awc-panel__order-button" />
+		</semantic:footerCustomActions>
+	</semantic:SemanticPage>
+</mvc:View>

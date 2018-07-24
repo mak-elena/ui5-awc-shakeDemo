@@ -1,0 +1,13 @@
+<mvc:View
+	controllerName="ui5.awc.demo.controller.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	busy="{appView>/busy}"
+	busyIndicatorDelay="{appView>/delay}"
+	xmlns="sap.m"
+	height="100%">
+	<App id="idAppControl" class="ui5-awc">
+		<pages>
+		</pages>
+	</App>
+</mvc:View>

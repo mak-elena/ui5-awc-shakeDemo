@@ -1,0 +1,10 @@
+.sapMBtn.ui5-awc_adaptiveButton .sapMBtnContent {
+	padding: 0.5rem;
+}
+
+ .sapMBtn.ui5-awc_adaptiveButton,
+ .sapMBtn.ui5-awc_adaptiveButton > .sapMBtnInner {
+	height: auto;
+}
+
+

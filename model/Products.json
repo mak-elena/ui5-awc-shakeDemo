@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Margherita",
+		"price": 6.0,
+		"currency": "€"
+	},
+	{
+		"name": "Peperoni",
+		"price": 7,
+		"currency": "€"
+	},
+	{
+		"name": "Tonno",
+		"price": 8,
+		"currency": "€"
+	},
+	{
+		"name": "Verdi",
+		"price": 5.0,
+		"currency": "€"
+	}
+]
