@@ -3,6 +3,8 @@
 
 ## Adaptive User Interface Demo
 
+See also (Adaptive Variants Demo)[https://github.com/mak-elena/ui5-awc-variantsDemo]
+
 **Showcase**: Vibration (movement) of a device makes UI elements increase size.
 
 Demonstrates how [context queries](https://github.com/FraunhoferIAO/awc-core/blob/master/doc/API.md#contextquery) might be used to adapt UI to environmment conditions. [Generic Sensor API](https://www.w3.org/TR/generic-sensor/) is used to gather data (Accelerator) and adjust size of UI elements.
