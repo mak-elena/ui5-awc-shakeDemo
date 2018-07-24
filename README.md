@@ -3,7 +3,7 @@
 
 ## Adaptive User Interface Demo
 
-See also (Adaptive Variants Demo)[https://github.com/mak-elena/ui5-awc-variantsDemo]
+See also [Adaptive Variants Demo](https://github.com/mak-elena/ui5-awc-variantsDemo)
 
 **Showcase**: Vibration (movement) of a device makes UI elements increase size.
 
