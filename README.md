@@ -9,17 +9,17 @@ Demonstrates how [context queries](https://github.com/FraunhoferIAO/awc-core/blo
 
 **Showcase**: Vibration (movement) of a device makes UI elements increase size.
 
-### Phone
+#### Phone
 
 **To test in Chrome follow the
 [Launch Instructions for Generic Sensor API](https://intel.github.io/generic-sensor-demos/)** or use buttons in the top to simulsate **Vibration Level** change.
 
 
-### Laptop
+#### Laptop
 Since no sensor API is available the **Vibration Level** might be
 simulated using the buttons in the top of the app.
 
-**[Launch Demo](https://mak-elena.github.io/ui5-awc-shakeDemo/)**
+### **[Launch Demo](https://mak-elena.github.io/ui5-awc-shakeDemo/)**
 
 ## @DEV
 
