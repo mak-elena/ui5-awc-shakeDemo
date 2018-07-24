@@ -13,6 +13,9 @@ sap.ui.define([],
 					.sapMInput.ui5-awc_adaptiveInput > .sapMInputDivWrapper {
 						height: 100%;
 					}
+					.sapMInput.ui5-awc_adaptiveInput > .sapMInputBaseContentWrapper {
+						height: 100%;
+					}
 				}
 				@context (vibration > 1) {
 					.sapMInput.ui5-awc_adaptiveInput .sapMInputBaseInner {
