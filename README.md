@@ -29,7 +29,7 @@ simulated using the buttons in the top of the app.
 ## @DEV
 
 Built with
-* [openUI5](https://openui5.hana.ondemand.com/) framework (GitHub: https://github.com/SAP/openui5)
+* [OpenUI5](https://openui5.hana.ondemand.com/) framework (GitHub: https://github.com/SAP/openui5)
 * [Adaptive Web Components](https://github.com/FraunhoferIAO/awc-core) Framework
 * [Generic Sensor API](https://www.w3.org/TR/generic-sensor/)
 
